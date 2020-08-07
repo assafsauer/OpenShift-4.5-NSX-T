@@ -11,7 +11,7 @@ compute:
       coresPerSocket: 2
       memoryMB: 8196
       osDisk:
-        diskSizeGB: 50
+        diskSizeGB: 40
 controlPlane: 
   hyperthreading: Enabled 
   name: master
@@ -22,7 +22,7 @@ controlPlane:
       coresPerSocket: 2
       memoryMB: 16384
       osDisk:
-        diskSizeGB: 50
+        diskSizeGB: 40
 metadata:
   name: ocp 
 networking:
