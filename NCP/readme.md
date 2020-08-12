@@ -1,4 +1,7 @@
 
+
+**#variables**
+
 var_nsx_api_managers=192.168.1.70  <br>
 var_nsx_api_password="SAuer1357V1357V!"   <br>
 var_external_ip_pools=ocp-lb-pool  <br>
@@ -16,6 +19,9 @@ var_edge_cluster=$(curl --silent -k -u admin:$var_nsx_api_password -X GET https:
 
 echo $var_edge_cluster
 
+
+**#replace variables**
+
 sed -i "s/var_nsx_api_managers/${var_nsx_api_managers}/g" configmap.yaml  <br>
 sed -i "s/var_nsx_api_password/${var_nsx_api_password}/g" configmap.yaml  <br>
 sed -i "s/var_external_ip_pools/${var_external_ip_pools}/g" configmap.yaml  <br>
@@ -25,6 +31,7 @@ sed -i "s/var_apiserver_host_ip/${var_apiserver_host_ip}/g" configmap.yaml  <br>
 sed -i "s/var_cluster/${var_cluster}/g" configmap.yaml  <br>
 sed -i "s/var_edge_cluster/${var_edge_cluster}/g" configmap.yaml  <br>
 
+**#confirm values**
 
 root@sauer-virtual-machine:/home/sauer/ncp# cat configmap.yaml | grep "=" |grep -v "#"  <br>
     adaptor = openshift4  <br>
