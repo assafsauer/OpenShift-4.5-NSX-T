@@ -11,6 +11,8 @@ overlayzone_name=Overlay  <br>
 var_edge_cluster_name=CLUSTER-EDGE-1  <br>
 var_cluster=ocp  <br>
 
+**#get UUID for overlay and EDGE via NSX-T API**
+
 var_overlay_tz=$(curl --silent -k -u admin:$var_nsx_api_password -X GET https://$var_nsx_api_managers/api/v1/transport-zones | awk '/display_name/ && /'$overlayzone_name'/ { print x }; { x=$0 }' | awk '{ print $3 }' | tr ',' '\n')
 
 echo $var_overlay_tz  <br>
