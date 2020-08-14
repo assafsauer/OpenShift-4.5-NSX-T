@@ -24,6 +24,7 @@ echo $var_edge_cluster
 
 
 **#replace variables**
+
 sed -i "s/var_top_tier_router/${var_top_tier_router}/g" configmap.yaml  <br>
 sed -i "s/var_nsx_api_managers/${var_nsx_api_managers}/g" configmap.yaml  <br>
 sed -i "s/var_nsx_api_password/${var_nsx_api_password}/g" configmap.yaml  <br>
