@@ -6,6 +6,7 @@ var_nsx_api_managers=192.168.1.70  <br>
 var_nsx_api_password="SAuer1357V1357V!"   <br>
 var_external_ip_pools=ocp-lb-pool  <br>
 var_tier0_gateway=TF_Tier_0  <br>
+var_top_tier_router=TF-Tier-1-01 <br>
 var_apiserver_host_ip=api.ocp.osauer.local  <br>
 overlayzone_name=Overlay  <br>
 var_edge_cluster_name=CLUSTER-EDGE-1  <br>
@@ -23,7 +24,7 @@ echo $var_edge_cluster
 
 
 **#replace variables**
-
+sed -i "s/var_top_tier_router/${var_top_tier_router}/g" configmap.yaml  <br>
 sed -i "s/var_nsx_api_managers/${var_nsx_api_managers}/g" configmap.yaml  <br>
 sed -i "s/var_nsx_api_password/${var_nsx_api_password}/g" configmap.yaml  <br>
 sed -i "s/var_external_ip_pools/${var_external_ip_pools}/g" configmap.yaml  <br>
