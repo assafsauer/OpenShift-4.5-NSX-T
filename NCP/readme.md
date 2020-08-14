@@ -3,7 +3,7 @@
 **#variables**
 
 var_nsx_api_managers=192.168.1.70  <br>
-var_nsx_api_password="SAuer1357V1357V!"   <br>
+var_nsx_api_password="SAuer1357N@1357N"   <br>
 var_external_ip_pools=ocp-lb-pool  <br>
 var_tier0_gateway=TF_Tier_0  <br>
 var_top_tier_router=TF-Tier-1-01 <br>
