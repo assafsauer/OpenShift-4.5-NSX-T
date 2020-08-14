@@ -259,9 +259,10 @@ data:
     # Resource ID of the top-tier router for the container cluster network,
     # which could be either tier0 or tier1. If policy_nsxapi is enabled, should
     # be ID of a tier0/tier1 gateway.
-    #top_tier_router = TF-Tier-1-01 
+    
+    top_tier_router = var_top_tier_router
 
-    tier0_gateway = var_tier0_gateway 
+    # tier0_gateway = var_tier0_gateway 
 
     # Option to use single-tier router for the container cluster network
     single_tier_topology = True
