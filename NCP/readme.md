@@ -22,6 +22,7 @@ var_edge_cluster=$(curl --silent -k -u admin:$var_nsx_api_password -X GET https:
 
 echo $var_edge_cluster
 
+var.tier0_gateway=$(curl --silent -k -u admin:$var_nsx_api_password -X GET https://$var_nsx_api_managers/policy/api/v1/infra/tier-0s | awk '/display_name/ && /'$var_tier0_gateway'/ { print x }; { x=$0 }' | awk '{ print $3 }' | tr ',' '\n')
 
 **#replace variables**
 
@@ -34,6 +35,7 @@ sed -i "s/var_tier0_gateway/${var_tier0_gateway}/g" configmap.yaml  <br>
 sed -i "s/var_apiserver_host_ip/${var_apiserver_host_ip}/g" configmap.yaml  <br>
 sed -i "s/var_cluster/${var_cluster}/g" configmap.yaml  <br>
 sed -i "s/var_edge_cluster/${var_edge_cluster}/g" configmap.yaml  <br>
+sed -i "s/var.tier0_gateway/${var.tier0_gateway}/g" configmap.yaml  <br>
 
 **#confirm values**
 
