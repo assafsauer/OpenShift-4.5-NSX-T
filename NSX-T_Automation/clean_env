@@ -1,0 +1,13 @@
+
+## clean segments ##
+
+
+curl --silent -k -u admin:SAuer1357N@1357N -X GET https://192.168.1.70/policy/api/v1/infra/segments | grep -A 2 seg | grep  ' "path" : ' | awk '{print $3}' | sed 's/"//g' | sed 's/,//g' > seg
+
+segnum=$(wc -l seg |awk '{print $1}')
+
+delete="curl --silent -k -u admin:SAuer1357N@1357N -X DELETE https://192.168.1.70/policy/api/v1"
+
+sed  -I -e "s|^|$delete|" seg
+
+sed -i  s/$/?force=true/ seg
