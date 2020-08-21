@@ -35,3 +35,23 @@ root@ubuntu:/home/viewadmin#   <br>
 #ping T0 and T1 interfaces from your jumpbox  <br>
 #ip assigned from DHCP in the overlay segment (ms_t1_int)  <br>
 #nslookup resolved api.ocp.osauer.local , api-int.ocp.osauer.local and *apps.ocp.osauer.local  <br>
+
+
+##### Packages ######
+
+curl -O https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz
+
+curl -O https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
+
+curl -O https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/latest/latest/rhcos-4.5.2-x86_64-vmware.x86_64.ova
+
+
+EXTRACT:
+tar -xzvf openshift-install-linux.tar.gz
+tar -xzvf openshift-client-linux.tar.gz
+chmod +x oc 
+cp oc /usr/local/bin/oc
+chmod +x kubectl
+cp kubectl /usr/local/bin/kubectl
+mv openshift-install /usr/local/bin/
+
