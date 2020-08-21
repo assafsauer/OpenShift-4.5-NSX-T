@@ -46,6 +46,7 @@ root@ubuntu:/home/viewadmin#
 
  **##### Packages ######**
 ```diff
++ download and extracat packages
 curl -O https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz
 
 curl -O https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
@@ -103,11 +104,13 @@ sed -i "s/true/false/g" /root/vsphere/manifests/cluster-scheduler-02-config.yml
  ```
 **##### Create Local web Service for the igintion files #####**
  ```diff
++configure nginx and upload the iginition files
 https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/nginx.setup.sh
 
  ```
 **##### automate Cluster nodes on Vsphere with govc #####**
  ```diff
+ +automate infra (nodes/workers)
 the govc will create Master/workers nodes and will insert the proper ingitions values to each VM.   
 1) edit the vars section  <br>
 2) the govc create MAC for each VM and you can define assign static IP based MAC from the OCP segment  
