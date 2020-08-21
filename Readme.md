@@ -56,7 +56,7 @@ cp kubectl /usr/local/bin/kubectl <br>
 mv openshift-install /usr/local/bin/ <br>
 
  
-**NCP**
+**##### NCP #####**
  
  edit the NCP vars and run the script  <br>
  https://github.com/assafsauer/OpenShift-4.5-NSX-T/tree/master/NCP
@@ -76,7 +76,7 @@ cat /root/.ssh/id_rsa.pub  <br>
  eval "$(ssh-agent -s)" <br>
  ssh-add  ~/.ssh/id_rsa <br>
  
- **##### Install Config ##### **
+ **##### Install Config #####**
  
  edit the install-config.yaml..   <br>
 use the ssh key from previos step (cat /root/.ssh/id_rsa.pub) and download your secret from https://cloud.redhat.com/openshift/install/vsphere/user-provisioned  <br>
