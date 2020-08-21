@@ -7,7 +7,7 @@
 
 ```diff
 
-## deploy multi Tier routing for OCP4.5
++deploy multi Tier routing for OCP4.5
  
 git clone https://github.com/assafsauer/OpenShift-4.5-NSX-T.git
 
@@ -63,7 +63,7 @@ mv openshift-install /usr/local/bin/
 
 **##### NCP #####**
  ```diff 
- edit the NCP vars and run the script  
+ +edit the NCP vars and run the script  
  https://github.com/assafsauer/OpenShift-4.5-NSX-T/tree/master/NCP
  
 **Installation prep**
@@ -85,16 +85,16 @@ cat /root/.ssh/id_rsa.pub
   ```
  **##### Install Config #####**
   ```diff
- edit the install-config.yaml..   <br>
++edit the install-config.yaml..   <br>
 use the ssh key from previos step (cat /root/.ssh/id_rsa.pub) and download your secret from https://cloud.redhat.com/openshift/install/vsphere/user-provisioned  <br>
  
  https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/install-config.yaml  
  
  
- Create manifest fodler:
+#Create manifest fodler:
 openshift-install create manifests --dir=/root/vsphere/
 
-copy the NCP yamls to the manifest folder 
+#copy the NCP yamls to the manifest folder 
 cp NCP/*.yaml manifests/
 
 sed -i "s/true/false/g" /root/vsphere/manifests/cluster-scheduler-02-config.yml
