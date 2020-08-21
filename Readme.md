@@ -79,3 +79,17 @@ cat /root/.ssh/id_rsa.pub  <br>
  edit the install-config.yaml..   <br>
 use the ssh key from previos step (cat /root/.ssh/id_rsa.pub) and download your secret from https://cloud.redhat.com/openshift/install/vsphere/user-provisioned  <br>
  https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/install-config.yaml  <br>
+ 
+ 
+ Create manifest fodler:
+openshift-install create manifests --dir=/root/vsphere/
+
+copy the NCP yamls to the manifest folder 
+cp NCP/*.yaml manifests/
+
+sed -i "s/true/false/g" /root/vsphere/manifests/cluster-scheduler-02-config.yml
+
+CREATE WEB SERVICE FOR THE IGINITION FILES
+
+
+
