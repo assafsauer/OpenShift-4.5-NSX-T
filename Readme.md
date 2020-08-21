@@ -1,7 +1,4 @@
-```diff
-+ this will be highlighted in green
-- this will be highlighted in red
-```
+
 
 # OpenShift 4.5 integrated with NSX-T SDN (NCP)
 
@@ -9,10 +6,10 @@
 ## quick start
 
 ```diff
-+
-## deploy multi Tier routing for OCP4.5
+
++## deploy multi Tier routing for OCP4.5
  
-git clone https://github.com/assafsauer/OpenShift-4.5-NSX-T.git
++git clone https://github.com/assafsauer/OpenShift-4.5-NSX-T.git
 
 
 cd OpenShift-4.5-NSX-T/NSX-T_Automation  <br>
