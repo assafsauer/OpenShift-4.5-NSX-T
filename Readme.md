@@ -56,18 +56,19 @@ cp kubectl /usr/local/bin/kubectl <br>
 mv openshift-install /usr/local/bin/ <br>
 
  
- ##### NCP ######
+**NCP**
  
  edit the NCP vars and run the script  <br>
  https://github.com/assafsauer/OpenShift-4.5-NSX-T/tree/master/NCP
  
-  ##### Installtion ######
+**Installation prep**
   
   #Create installtion folder and copy and NCP yamls to the manifest folder:
 
 mkdir ~/vsphere <br>
 
-CREATE SSH KEY 
+**create SSH-KEY**
+ 
 
 ssh-keygen -t rsa -b 4096 -N '' \
     -f  ~/.ssh/id_rsa
@@ -75,7 +76,8 @@ cat /root/.ssh/id_rsa.pub  <br>
  eval "$(ssh-agent -s)" <br>
  ssh-add  ~/.ssh/id_rsa <br>
  
- INSTALL CONFIG 
+ **Install Config**
+ 
  edit the install-config.yaml..   <br>
 use the ssh key from previos step (cat /root/.ssh/id_rsa.pub) and download your secret from https://cloud.redhat.com/openshift/install/vsphere/user-provisioned  <br>
  https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/install-config.yaml  <br>
@@ -89,7 +91,7 @@ cp NCP/*.yaml manifests/
 
 sed -i "s/true/false/g" /root/vsphere/manifests/cluster-scheduler-02-config.yml
 
-CREATE WEB SERVICE FOR THE IGINITION FILES
+**Create Local web Service for the igintion files**
 
 https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/nginx.setup.sh
 
