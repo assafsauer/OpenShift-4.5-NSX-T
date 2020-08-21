@@ -1,5 +1,6 @@
 # OpenShift 4.5 integrated with NSX-T SDN (NCP)
 
+<span style="color: green"> Some green text </span>
  
 ## quick start
 
