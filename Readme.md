@@ -7,7 +7,7 @@
 
 ```diff
 
-+## deploy multi Tier routing for OCP4.5
+## deploy multi Tier routing for OCP4.5
  
 git clone https://github.com/assafsauer/OpenShift-4.5-NSX-T.git
 
@@ -41,7 +41,7 @@ root@ubuntu:/home/viewadmin#   <br>
 #ip assigned from DHCP in the overlay segment (ms_t1_int)  <br>
 #nslookup resolved api.ocp.osauer.local , api-int.ocp.osauer.local and *apps.ocp.osauer.local  <br>
 ```
-
+```diff
  **##### Packages ######**
 
 curl -O https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz
@@ -59,8 +59,8 @@ cp oc /usr/local/bin/oc <br>
 chmod +x kubectl <br>
 cp kubectl /usr/local/bin/kubectl <br>
 mv openshift-install /usr/local/bin/ <br>
-
- 
+```
+```diff 
 **##### NCP #####**
  
  edit the NCP vars and run the script  <br>
@@ -111,7 +111,7 @@ the govc will create Master/workers nodes and will insert the proper ingitions v
 **RUN Bootstrap install**
 
 openshift-install --dir=/root/vsphere/ wait-for bootstrap-complete --log-level=debug
-
+```
 
 
 
