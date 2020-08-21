@@ -55,3 +55,24 @@ chmod +x kubectl <br>
 cp kubectl /usr/local/bin/kubectl <br>
 mv openshift-install /usr/local/bin/ <br>
 
+ 
+ ##### NCP ######
+ 
+ edit the NCP vars and run the script  <br>
+ https://github.com/assafsauer/OpenShift-4.5-NSX-T/tree/master/NCP
+ 
+  ##### Installtion ######
+  
+  #Create installtion folder and copy and NCP yamls to the manifest folder:
+
+mkdir ~/vsphere <br>
+
+CREATE SSH KEY 
+
+ssh-keygen -t rsa -b 4096 -N '' \
+    -f  ~/.ssh/id_rsa
+cat /root/.ssh/id_rsa.pub  <br>
+ eval "$(ssh-agent -s)" <br>
+ ssh-add  ~/.ssh/id_rsa <br>
+ 
+ 
