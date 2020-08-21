@@ -91,5 +91,7 @@ sed -i "s/true/false/g" /root/vsphere/manifests/cluster-scheduler-02-config.yml
 
 CREATE WEB SERVICE FOR THE IGINITION FILES
 
+https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/nginx.setup.sh
+
 
 
