@@ -9,7 +9,7 @@
 
 +## deploy multi Tier routing for OCP4.5
  
-+git clone https://github.com/assafsauer/OpenShift-4.5-NSX-T.git
+git clone https://github.com/assafsauer/OpenShift-4.5-NSX-T.git
 
 
 cd OpenShift-4.5-NSX-T/NSX-T_Automation  <br>
@@ -20,9 +20,10 @@ terraform init  <br>
 terraform apply  <br>
 
 #confirm Network connectivity (ping T1 interface 10.4.1.1)
-
- ** Prep **
 ```
+```diff
+ **Prep**
+
  **##### DNS setup (dnsmasq)** 
 
 WILDCARD   <br>
@@ -39,7 +40,7 @@ root@ubuntu:/home/viewadmin#   <br>
 #ping T0 and T1 interfaces from your jumpbox  <br>
 #ip assigned from DHCP in the overlay segment (ms_t1_int)  <br>
 #nslookup resolved api.ocp.osauer.local , api-int.ocp.osauer.local and *apps.ocp.osauer.local  <br>
-
+```
 
  **##### Packages ######**
 
