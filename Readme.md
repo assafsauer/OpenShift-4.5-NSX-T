@@ -21,11 +21,11 @@ terraform apply
 
 #confirm Network connectivity (ping T1 interface 10.4.1.1)
 ```
-```diff
+
  **Prep**
 
  **##### DNS setup (dnsmasq)** 
-
+```diff
 WILDCARD   
 root@ubuntu:/home/viewadmin# cat /etc/dnsmasq.conf | grep 10.4.1.6  
 address=/.apps.ocp.osauer.local/10.4.1.6   
@@ -41,9 +41,9 @@ root@ubuntu:/home/viewadmin#
 #ip assigned from DHCP in the overlay segment (ms_t1_int)  
 #nslookup resolved api.ocp.osauer.local , api-int.ocp.osauer.local and *apps.ocp.osauer.local  
 ```
-```diff
- **##### Packages ######**
 
+ **##### Packages ######**
+```diff
 curl -O https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz
 
 curl -O https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
@@ -60,9 +60,9 @@ chmod +x kubectl
 cp kubectl /usr/local/bin/kubectl  
 mv openshift-install /usr/local/bin/  
 ```
-```diff 
+
 **##### NCP #####**
- 
+ ```diff 
  edit the NCP vars and run the script  
  https://github.com/assafsauer/OpenShift-4.5-NSX-T/tree/master/NCP
  
