@@ -1,7 +1,6 @@
-```diff
+
 + this will be highlighted in green
 - this will be highlighted in red
-```
 
 # OpenShift 4.5 integrated with NSX-T SDN (NCP)
 
