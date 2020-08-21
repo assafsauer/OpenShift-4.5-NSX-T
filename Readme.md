@@ -106,9 +106,9 @@ https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/nginx.setup.sh
  ```
 **##### automate Cluster nodes on Vsphere with govc #####**
  ```diff
-the govc will create Master/workers nodes and will insert the proper ingitions values to each VM.  <br>
-+1) edit the vars section  <br>
-+2) the govc create MAC for each VM and you can define assign static IP based MAC from the OCP segment  <br>
+the govc will create Master/workers nodes and will insert the proper ingitions values to each VM.   
+1) edit the vars section  <br>
+2) the govc create MAC for each VM and you can define assign static IP based MAC from the OCP segment  
 
  ```
 **RUN Bootstrap install**
