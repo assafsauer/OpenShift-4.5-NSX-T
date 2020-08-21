@@ -12,12 +12,12 @@
 git clone https://github.com/assafsauer/OpenShift-4.5-NSX-T.git
 
 
-cd OpenShift-4.5-NSX-T/NSX-T_Automation  <br>
-#Edit variables.tf  <br>
-#Edit main.tf   <br>
+cd OpenShift-4.5-NSX-T/NSX-T_Automation   
+#Edit variables.tf  
+#Edit main.tf   
 
-terraform init  <br>
-terraform apply  <br>
+terraform init  
+terraform apply   
 
 #confirm Network connectivity (ping T1 interface 10.4.1.1)
 ```
@@ -26,20 +26,20 @@ terraform apply  <br>
 
  **##### DNS setup (dnsmasq)** 
 
-WILDCARD   <br>
-root@ubuntu:/home/viewadmin# cat /etc/dnsmasq.conf | grep 10.4.1.6  <br>
-address=/.apps.ocp.osauer.local/10.4.1.6  <br>
+WILDCARD   
+root@ubuntu:/home/viewadmin# cat /etc/dnsmasq.conf | grep 10.4.1.6  
+address=/.apps.ocp.osauer.local/10.4.1.6   
 
-A-RECORD  <br>
-root@ubuntu:/home/viewadmin# cat /etc/hosts | grep 10.4.1.5  <br>
-10.4.1.5 api.ocp.osauer.local  <br>
-10.4.1.5  api-int.ocp.osauer.local   <br>
-root@ubuntu:/home/viewadmin#   <br>
+A-RECORD   
+root@ubuntu:/home/viewadmin# cat /etc/hosts | grep 10.4.1.5   
+10.4.1.5 api.ocp.osauer.local   
+10.4.1.5  api-int.ocp.osauer.local    
+root@ubuntu:/home/viewadmin#    
 
  ** CONFIRM **
-#ping T0 and T1 interfaces from your jumpbox  <br>
-#ip assigned from DHCP in the overlay segment (ms_t1_int)  <br>
-#nslookup resolved api.ocp.osauer.local , api-int.ocp.osauer.local and *apps.ocp.osauer.local  <br>
+#ping T0 and T1 interfaces from your jumpbox   
+#ip assigned from DHCP in the overlay segment (ms_t1_int)  
+#nslookup resolved api.ocp.osauer.local , api-int.ocp.osauer.local and *apps.ocp.osauer.local  
 ```
 ```diff
  **##### Packages ######**
@@ -52,18 +52,18 @@ curl -O https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/latest/
 
 
 EXTRACT:<br>
-tar -xzvf openshift-install-linux.tar.gz <br>
-tar -xzvf openshift-client-linux.tar.gz <br>
-chmod +x oc  <br>
-cp oc /usr/local/bin/oc <br>
-chmod +x kubectl <br>
-cp kubectl /usr/local/bin/kubectl <br>
-mv openshift-install /usr/local/bin/ <br>
+tar -xzvf openshift-install-linux.tar.gz  
+tar -xzvf openshift-client-linux.tar.gz 
+chmod +x oc  
+cp oc /usr/local/bin/oc  
+chmod +x kubectl  
+cp kubectl /usr/local/bin/kubectl  
+mv openshift-install /usr/local/bin/  
 ```
 ```diff 
 **##### NCP #####**
  
- edit the NCP vars and run the script  <br>
+ edit the NCP vars and run the script  
  https://github.com/assafsauer/OpenShift-4.5-NSX-T/tree/master/NCP
  
 **Installation prep**
@@ -77,16 +77,16 @@ mkdir ~/vsphere <br>
 
 ssh-keygen -t rsa -b 4096 -N '' \
     -f  ~/.ssh/id_rsa
-cat /root/.ssh/id_rsa.pub  <br>
- eval "$(ssh-agent -s)" <br>
- ssh-add  ~/.ssh/id_rsa <br>
+cat /root/.ssh/id_rsa.pub  
+ eval "$(ssh-agent -s)" 
+ ssh-add  ~/.ssh/id_rsa  
  
  **##### Install Config #####**
  
  edit the install-config.yaml..   <br>
 use the ssh key from previos step (cat /root/.ssh/id_rsa.pub) and download your secret from https://cloud.redhat.com/openshift/install/vsphere/user-provisioned  <br>
  
- https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/install-config.yaml  <br>
+ https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/install-config.yaml  
  
  
  Create manifest fodler:
