@@ -1,12 +1,15 @@
-
+```diff
 + this will be highlighted in green
 - this will be highlighted in red
+```
 
 # OpenShift 4.5 integrated with NSX-T SDN (NCP)
 
  
 ## quick start
 
+```diff
++
 ## deploy multi Tier routing for OCP4.5
  
 git clone https://github.com/assafsauer/OpenShift-4.5-NSX-T.git
@@ -22,7 +25,7 @@ terraform apply  <br>
 #confirm Network connectivity (ping T1 interface 10.4.1.1)
 
  ** Prep **
-
+```
  **##### DNS setup (dnsmasq)** 
 
 WILDCARD   <br>
