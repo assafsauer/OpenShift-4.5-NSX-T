@@ -46,12 +46,12 @@ curl -O https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshi
 curl -O https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/latest/latest/rhcos-4.5.2-x86_64-vmware.x86_64.ova
 
 
-EXTRACT:
-tar -xzvf openshift-install-linux.tar.gz
-tar -xzvf openshift-client-linux.tar.gz
-chmod +x oc 
-cp oc /usr/local/bin/oc
-chmod +x kubectl
-cp kubectl /usr/local/bin/kubectl
-mv openshift-install /usr/local/bin/
+EXTRACT:<br>
+tar -xzvf openshift-install-linux.tar.gz <br>
+tar -xzvf openshift-client-linux.tar.gz <br>
+chmod +x oc  <br>
+cp oc /usr/local/bin/oc <br>
+chmod +x kubectl <br>
+cp kubectl /usr/local/bin/kubectl <br>
+mv openshift-install /usr/local/bin/ <br>
 
