@@ -71,9 +71,10 @@ mv openshift-install /usr/local/bin/
   #Create installtion folder and copy and NCP yamls to the manifest folder:
 
 mkdir ~/vsphere <br>
-
+ ```
 **##### create SSH-KEY #####**
- 
+
+ ```diff
 
 ssh-keygen -t rsa -b 4096 -N '' \
     -f  ~/.ssh/id_rsa
@@ -81,8 +82,9 @@ cat /root/.ssh/id_rsa.pub
  eval "$(ssh-agent -s)" 
  ssh-add  ~/.ssh/id_rsa  
  
+  ```
  **##### Install Config #####**
- 
+  ```diff
  edit the install-config.yaml..   <br>
 use the ssh key from previos step (cat /root/.ssh/id_rsa.pub) and download your secret from https://cloud.redhat.com/openshift/install/vsphere/user-provisioned  <br>
  
@@ -96,20 +98,21 @@ copy the NCP yamls to the manifest folder
 cp NCP/*.yaml manifests/
 
 sed -i "s/true/false/g" /root/vsphere/manifests/cluster-scheduler-02-config.yml
-
+ ```
 **##### Create Local web Service for the igintion files #####**
-
+ ```diff
 https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/nginx.setup.sh
 
-
+ ```
 **##### automate Cluster nodes on Vsphere with govc #####**
+ ```diff
 ! the govc will create Master/workers nodes and will insert the proper ingitions values to each VM.  <br>
 ! 1) edit the vars section  <br>
 ! 2) the govc create MAC for each VM and you can define assign static IP based MAC from the OCP segment  <br>
 
-
+ ```
 **RUN Bootstrap install**
-
+ ```diff
 openshift-install --dir=/root/vsphere/ wait-for bootstrap-complete --log-level=debug
 ```
 
