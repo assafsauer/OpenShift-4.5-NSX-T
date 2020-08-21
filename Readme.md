@@ -26,6 +26,8 @@ terraform apply
 
  **##### DNS setup (dnsmasq)** 
 ```diff
++Example of DNS configuration with Dnsmasq below:
+
 WILDCARD   
 root@ubuntu:/home/viewadmin# cat /etc/dnsmasq.conf | grep 10.4.1.6  
 address=/.apps.ocp.osauer.local/10.4.1.6   
@@ -70,7 +72,7 @@ mv openshift-install /usr/local/bin/
   
   #Create installtion folder and copy and NCP yamls to the manifest folder:
 
-mkdir ~/vsphere <br>
+mkdir ~/vsphere 
  ```
 **##### create SSH-KEY #####**
 
