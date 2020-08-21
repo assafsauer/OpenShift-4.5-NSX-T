@@ -17,9 +17,9 @@ terraform apply  <br>
 
 #confirm Network connectivity (ping T1 interface 10.4.1.1)
 
- **## Prep
+ ** Prep **
 
-#####DNS setup (dnsmasq)#######
+ **##### DNS setup (dnsmasq)** 
 
 WILDCARD   <br>
 root@ubuntu:/home/viewadmin# cat /etc/dnsmasq.conf | grep 10.4.1.6  <br>
@@ -31,13 +31,13 @@ root@ubuntu:/home/viewadmin# cat /etc/hosts | grep 10.4.1.5  <br>
 10.4.1.5  api-int.ocp.osauer.local   <br>
 root@ubuntu:/home/viewadmin#   <br>
 
- **##### CONFIRM ###### **
+ ** CONFIRM **
 #ping T0 and T1 interfaces from your jumpbox  <br>
 #ip assigned from DHCP in the overlay segment (ms_t1_int)  <br>
 #nslookup resolved api.ocp.osauer.local , api-int.ocp.osauer.local and *apps.ocp.osauer.local  <br>
 
 
- **##### Packages ###### **
+ **##### Packages ######**
 
 curl -O https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux.tar.gz
 
@@ -56,7 +56,7 @@ cp kubectl /usr/local/bin/kubectl <br>
 mv openshift-install /usr/local/bin/ <br>
 
  
-**##### NCP ##### **
+**NCP**
  
  edit the NCP vars and run the script  <br>
  https://github.com/assafsauer/OpenShift-4.5-NSX-T/tree/master/NCP
@@ -67,7 +67,7 @@ mv openshift-install /usr/local/bin/ <br>
 
 mkdir ~/vsphere <br>
 
-**##### create SSH-KEY ##### **
+**##### create SSH-KEY #####**
  
 
 ssh-keygen -t rsa -b 4096 -N '' \
@@ -92,7 +92,7 @@ cp NCP/*.yaml manifests/
 
 sed -i "s/true/false/g" /root/vsphere/manifests/cluster-scheduler-02-config.yml
 
-**##### Create Local web Service for the igintion files ##### **
+**##### Create Local web Service for the igintion files #####**
 
 https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/nginx.setup.sh
 
