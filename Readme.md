@@ -75,4 +75,7 @@ cat /root/.ssh/id_rsa.pub  <br>
  eval "$(ssh-agent -s)" <br>
  ssh-add  ~/.ssh/id_rsa <br>
  
- 
+ INSTALL CONFIG 
+ edit the install-config.yaml..   <br>
+use the ssh key from previos step (cat /root/.ssh/id_rsa.pub) and download your secret from https://cloud.redhat.com/openshift/install/vsphere/user-provisioned  <br>
+ https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/install-config.yaml  <br>
