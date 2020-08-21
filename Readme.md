@@ -121,5 +121,31 @@ the govc will create Master/workers nodes and will insert the proper ingitions v
 openshift-install --dir=/root/vsphere/ wait-for bootstrap-complete --log-level=debug
 ```
 
+**Cleanup**
+ ```diff
+
+ +cleanup cluster and NSX-T/NCP objects  
+# clean NCP objects 
+ python nsx_policy_cleanup.py --remove --mgr-ip=192.168.1.70 -u admin -p "SAuer1357N@1357N" --top-tier-router-id=ocp-t1 --cluster=ocp
+ rm -r /root/vsphere 
+
+# clean Cluster 
+govc vm.power -off=true bootstrap.ocp.osauer.local
+govc vm.power -off=true cp-0.ocp.osauer.local
+govc vm.power -off=true cp-1.ocp.osauer.local
+govc vm.power -off=true cp-2.ocp.osauer.local
+govc vm.power -off=true node-0.ocp.osauer.local
+govc vm.power -off=true node-1.ocp.osauer.local
+govc vm.power -off=true node-2.ocp.osauer.local
 
 
+govc vm.destroy --dc=PKS-DC bootstrap.ocp.osauer.local
+govc vm.destroy --dc=PKS-DC cp-0.ocp.osauer.local
+govc vm.destroy --dc=PKS-DC cp-1.ocp.osauer.local
+govc vm.destroy --dc=PKS-DC.cp-2.ocp.osauer.local
+govc vm.destroy --dc=PKS-DC.node-0.ocp.osauer.local
+govc vm.destroy --dc=PKS-DC.node-1.ocp.osauer.local
+govc vm.destroy --dc=PKS-DC node-2.ocp.osauer.local
+ 
+ 
+ 
