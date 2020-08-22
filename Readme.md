@@ -1,6 +1,6 @@
 
 
-# OpenShift 4.5 integrated with NSX-T SDN (NCP)
+# User-Provisioned Infrastructure (UPI): OpenShift 4.5 / NSX-T 3.0 (NCP)
 
 
 ![Test Image 1](https://github.com/assafsauer/Openshift/blob/master/Screenshot%202020-07-27%20at%2016.08.14.png) 
