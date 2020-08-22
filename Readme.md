@@ -6,12 +6,30 @@
 ![Test Image 1](https://github.com/assafsauer/Openshift/blob/master/Screenshot%202020-07-27%20at%2016.08.14.png) 
 
 
+The idea behind this repository is to simplifiY OCP/UPI installation with NCP (NSX-T 3.0).
+I added terraform automation for NSX-T and replaced the terraform infra automation with GOVC script. 
+Some of the benefits of using NSX-T/NCP with OCP: 
+* Performance optimization by avoiding double encapsulation and bypassing node TCP/IP stack
+* Service type Load Balancer is realized automatically as NSX Virtual Server 
+* Admin Firewall policy enforced per service, per cluster, or across all clusters 
+* Distributed Firewall and Distributed Intrusion Detection System per Pod 
+* Reliable egress source IP address per OCP Project and per Service 
+* Mix of private and routed subnets per OpenShift Project 
+* Single pane of glass for OpenShift, Kubernetes, VM , and BM workload 
+* Network Quality of Service 
+* Service Insertion to redirect traffic between Pods to third party security appliance 
+* Visibility and Troubleshooting tools like NSX Traceflow, IPFIX, Port Mirroring, vRNI 
+
+
 ##  Installation Notes
+
 
 * well know issues:
   * conflict with additional VC cluster or WCP.
 * Bootstrap SSL CERT is  valid for 24 hours only
 * use cleanup script to clean NCP objects (cluster destroy wont work)
+
+
 
  
 ## quick start
