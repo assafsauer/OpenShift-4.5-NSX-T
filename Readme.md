@@ -2,15 +2,20 @@
 
 # OpenShift 4.5 integrated with NSX-T SDN (NCP)
 
+```diff
 ![Test Image 1](https://github.com/assafsauer/Openshift/blob/master/Screenshot%202020-07-27%20at%2016.08.14.png) 
-
+```
 
  
 ## quick start
 
+ **##### NSX-T configuration ** 
+
+
 ```diff
 
-+deploy multi Tier routing for OCP4.5
++deploy multi Tier routing for OCP4.5 with Terraform
+
  
 git clone https://github.com/assafsauer/OpenShift-4.5-NSX-T.git
 
@@ -24,6 +29,15 @@ terraform apply
 
 #confirm Network connectivity (ping T1 interface 10.4.1.1)
 ```
+#Create control LB
+1) Set Membership Criteria based ip or VM name (Inverntory >> Groups >> Add Group)
+2) add LB Active Monitors for port 6443 and port 22623
+3) create 2 server pool for each port (make sure to define monitor from previous step)
+4)  create the Load Balancer attached to your T1 (OCP)
+5) create 2 virtual servers for each port with the ip of the API (10.4.1.5)
+
+##### i will add automation to the LB shortly ##### 
+
 
  **Prep**
 
