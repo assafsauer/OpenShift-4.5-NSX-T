@@ -6,6 +6,13 @@
 ![Test Image 1](https://github.com/assafsauer/Openshift/blob/master/Screenshot%202020-07-27%20at%2016.08.14.png) 
 
 
+##  Installation Notes
+
+* well know issues:
+  * conflict with additional VC cluster or WCP.
+* Bootstrap SSL CERT is  valid for 24 hours only
+* use cleanup script to clean NCP objects (cluster destroy wont work)
+
  
 ## quick start
 
