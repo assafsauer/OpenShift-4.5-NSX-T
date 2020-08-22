@@ -36,7 +36,7 @@ terraform apply
 4)  create the Load Balancer attached to your T1 (OCP)
 5) create 2 virtual servers for each port with the ip of the API (10.4.1.5)
 
-##### i will add automation to the LB shortly ##### 
+##### i will add LB automation shortly  ##### 
 ```
 
  **Prep**
