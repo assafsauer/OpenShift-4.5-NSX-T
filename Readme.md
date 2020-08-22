@@ -2,9 +2,9 @@
 
 # OpenShift 4.5 integrated with NSX-T SDN (NCP)
 
-```diff
+
 ![Test Image 1](https://github.com/assafsauer/Openshift/blob/master/Screenshot%202020-07-27%20at%2016.08.14.png) 
-```
+
 
  
 ## quick start
@@ -28,7 +28,7 @@ terraform init
 terraform apply   
 
 #confirm Network connectivity (ping T1 interface 10.4.1.1)
-```
+
 #Create control LB
 1) Set Membership Criteria based ip or VM name (Inverntory >> Groups >> Add Group)
 2) add LB Active Monitors for port 6443 and port 22623
@@ -37,7 +37,7 @@ terraform apply
 5) create 2 virtual servers for each port with the ip of the API (10.4.1.5)
 
 ##### i will add automation to the LB shortly ##### 
-
+```
 
  **Prep**
 
