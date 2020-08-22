@@ -2,6 +2,9 @@
 
 # OpenShift 4.5 integrated with NSX-T SDN (NCP)
 
+![Test Image 1](https://github.com/assafsauer/Openshift/blob/master/Screenshot%202020-07-27%20at%2016.08.14.png) 
+
+
  
 ## quick start
 
