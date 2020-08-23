@@ -212,7 +212,8 @@ oc logs -n nsx-system deploy/nsx-ncp > ncp.log
 oc logs -n nsx-system-operator deploy/nsx-ncp-operator > operator.log
 
 ### From master (ssh core@master_ip): 
-journalctl > journalctl.txt
+journalctl > journalctl.txt  
+Journal  (grep -i error journalctl.log  | sort -u -t :  -k 10,10 )
 curl -v -k https://192.168.1.70 ### check connectivitiy to NSX-T 
 Nslookup api.ocp.osauer.local
  ```
