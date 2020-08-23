@@ -203,9 +203,9 @@ govc vm.destroy --dc=PKS-DC.cp-2.ocp.osauer.local
 govc vm.destroy --dc=PKS-DC.node-0.ocp.osauer.local
 govc vm.destroy --dc=PKS-DC.node-1.ocp.osauer.local
 govc vm.destroy --dc=PKS-DC node-2.ocp.osauer.local
+```
  
- 
- **Troubleshooting**
+**Troubleshooting**
  ```diff
 
 oc logs -n nsx-system deploy/nsx-ncp > ncp.log
