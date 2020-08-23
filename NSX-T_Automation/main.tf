@@ -30,12 +30,6 @@ provider "nsxt" {
     retry_on_status_codes    = [429]
 }
 
-# Create NSX-T Overlay Segments
-resource "nsxt_policy_segment" "tf2_segment_web" {
-    display_name        = "isolated_net"
-    description         = "Segment created by Terraform"
-    transport_zone_path = data.nsxt_policy_transport_zone.overlay_tz.path
-}
  
 # Create NSX-T VLAN Segments
 resource "nsxt_policy_vlan_segment" "vlan101" {
@@ -114,7 +108,7 @@ resource "nsxt_policy_tier1_gateway" "tier1_gw" {
 
 # Create NSX-T Overlay Segments
 resource "nsxt_policy_segment" "t1_int" {
-    display_name        = "ms_t1_int"
+    display_name        = "ocp"
     description         = "Segment created by Terraform"
     transport_zone_path = data.nsxt_policy_transport_zone.overlay_tz.path
     ##connectivity_path   = nsxt_policy_tier1_gateway.tier1_gw.path
@@ -133,15 +127,6 @@ resource "nsxt_policy_segment" "t1_int" {
 }
 
 
-
-resource "nsxt_policy_tier1_gateway_interface" "if1" {
-  display_name           = "segment1_interface"
-  description            = "connection to segment1"
-  gateway_path           = nsxt_policy_tier1_gateway.tier1_gw.path
-  segment_path           = nsxt_policy_segment.t1_int.path
-  subnets                = ["10.4.1.1/24"]
-  mtu                    = 1600
-}
 
 resource "nsxt_policy_static_route" "route1" {
   display_name = "sroute"
