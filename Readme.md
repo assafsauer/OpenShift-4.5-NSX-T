@@ -206,8 +206,8 @@ govc vm.destroy --dc=PKS-DC bootstrap.ocp.osauer.local
 govc vm.destroy --dc=PKS-DC cp-0.ocp.osauer.local
 govc vm.destroy --dc=PKS-DC cp-1.ocp.osauer.local
 govc vm.destroy --dc=PKS-DC.cp-2.ocp.osauer.local
-govc vm.destroy --dc=PKS-DC.node-0.ocp.osauer.local
-govc vm.destroy --dc=PKS-DC.node-1.ocp.osauer.local
+govc vm.destroy --dc=PKS-DC node-0.ocp.osauer.local
+govc vm.destroy --dc=PKS-DC node-1.ocp.osauer.local
 govc vm.destroy --dc=PKS-DC node-2.ocp.osauer.local
 ```
  
