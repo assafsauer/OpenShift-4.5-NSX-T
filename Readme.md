@@ -167,7 +167,8 @@ sed -i "s/true/false/g" /root/vsphere/manifests/cluster-scheduler-02-config.yml
 **##### Create Local web Service for the igintion files #####**
  ```diff
 +configure nginx and upload the iginition files
-https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/nginx.setup.sh
+openshift-install create ignition-configs --dir=/root/vsphere/
+Nginx Setup:  https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/nginx.setup.sh
 
  ```
 **##### automate Cluster nodes on Vsphere with govc #####**
