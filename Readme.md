@@ -54,7 +54,7 @@ terraform apply
 
 #confirm Network connectivity (ping T1 interface 10.4.1.1)
 
-#Create control LB
++Create LB for Control-plan and bootstrap
 1) Set Membership Criteria based ip or VM name (Inverntory >> Groups >> Add Group)
 2) add LB Active Monitors for port 6443 and port 22623
 3) create 2 server pool for each port (make sure to define monitor from previous step)
