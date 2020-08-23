@@ -34,7 +34,7 @@ well know issues:
  
 ## quick start
 
- **##### NSX-T configuration ** 
+ **##### NSX-T configuration** 
 
 
 ```diff
