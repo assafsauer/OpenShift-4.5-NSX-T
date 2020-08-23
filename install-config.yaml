@@ -24,7 +24,7 @@ platform:
     username: administrator@osauer.local 
     password: "SAuer1357V!"
     datacenter: PKS-DC
-    defaultDatastore: NFS
+    defaultDatastore: datastore5
     cluster: MGMT
 pullSecret: '{"auths":{"cloud.opensh","email":"TZEZTNXVrMEkwQnVF1YWY3eGllNm9Zc1czbEJ4eXNSTXFBazF4ZXlZ","email":"sauera@vmware.com"}}}' 
 sshKey: 'ssh-rsa AAAAB3NzaC1ac2EAAAADAQABAAACAQDDAmgTZy5lBYo+RH4asI4QssfoCjhBIL9PfsrF9uE YJnPpOZ414tHwRNSuq7HGIumYBnXeHUoJ4yJ6kbWu8sEfg5Cg6SPBrS/6jo4cmm4RzPMpM3crU8JKpQPwraG5hAvJjOsoxQwjqur33wdP+9OJ5up3Hitf0Wu5p/o+6veNrubdHhbYoVAsjc8i/0DpO1ex9yqfMUPkIoMvK2ydd7yvFFNiyQ+TmP+iUAEY+VMci8tqkrSe6rQzLqsA1JhtR2yPEkHOpZomy6MKSkb+JckDFl9ru7gQyKJJpP7bubD7gREqDFpwBVQk5TQJB0tIYpccMhkr7f+2Ju956kfGZ7ssKpwzsitSKBy10eVdYz7FWaZkOWdm6hnC203FefT+wKnAxweksUTWf40UHhC9kRky8psaN5/MFk3xwV1LZlX0/EjQyYuL7MdvngqFiEIi1rLBVWEUSPAoeLIuf0Lp2RlWo5EcIxOS6er+Kymgq1o26faZt+WWjVVYMJ6DuhwaV83l7arvQ7ha5XXWgQ8cacINAaDCBPSH+nK+T5KZhXwUoQaMqKKhXQyHvwI7f2gwQwGfQo//HM1/YXI4PXQmVn22+nFSxiG9ouPkxRxoU88gp4pTQmzkBM4hK20mE92Zh19ke3CwFGofyj4uPEw== root@sauer-virtual-machine'
