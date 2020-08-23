@@ -24,11 +24,11 @@ Some of the benefits of using NSX-T/NCP with OCP:
 ##  Installation Notes
 
 
-* well know issues:
-  * conflict with additional VC cluster or WCP.
+well know issues:
+* conflict with additional VC cluster or WCP.
 * Bootstrap SSL CERT is  valid for 24 hours only
 * use cleanup script to clean NCP objects (cluster destroy wont work)
-
+* IPI installtion is under construction, stick to UPI..
 
 
  
