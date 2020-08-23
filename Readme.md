@@ -94,11 +94,16 @@ Address:	192.168.1.80#53
 _etcd-server-ssl._tcp.ocp.osauer.local	service = 0 10 2380 etcd-2.ocp.osauer.local.
 _etcd-server-ssl._tcp.ocp.osauer.local	service = 0 10 2380 etcd-1.ocp.osauer.local.
 _etcd-server-ssl._tcp.ocp.osauer.local	service = 0 10 2380 etcd-0.ocp.osauer.local.
+```
 
+**##### check list ** 
+```diff
  ** CONFIRM **
 #ping T0 and T1 interfaces from your jumpbox   
-#ip assigned from DHCP in the overlay segment (ms_t1_int)  
+#confirm that the nodes get assigned DHCP UP in the overlay segment (ms_t1_int)  
 #nslookup resolved api.ocp.osauer.local , api-int.ocp.osauer.local and *apps.ocp.osauer.local  
+#verfiy that bootstrap interface is up on the virtual servers.
+
 ```
 
  **##### Packages ######**
