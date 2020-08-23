@@ -80,6 +80,21 @@ root@ubuntu:/home/viewadmin# cat /etc/hosts | grep 10.4.1.5
 10.4.1.5  api-int.ocp.osauer.local    
 root@ubuntu:/home/viewadmin#    
 
+SRV
+root@ubuntu:/home/viewadmin# cat /etc/dnsmasq.conf |grep etcd
+srv-host=_etcd-server-ssl._tcp.ocp.osauer.local,etcd-0.ocp.osauer.local,2380,0,10
+srv-host=_etcd-server-ssl._tcp.ocp.osauer.local,etcd-1.ocp.osauer.local,2380,0,10
+srv-host=_etcd-server-ssl._tcp.ocp.osauer.local,etcd-2.ocp.osauer.local,2380,0,10
+
+
+root@sauer-virtual-machine:/home/sauer/Openshift.4.X-Automation# nslookup -type=SRV _etcd-server-ssl._tcp.ocp.osauer.local
+Server:		192.168.1.80
+Address:	192.168.1.80#53
+
+_etcd-server-ssl._tcp.ocp.osauer.local	service = 0 10 2380 etcd-2.ocp.osauer.local.
+_etcd-server-ssl._tcp.ocp.osauer.local	service = 0 10 2380 etcd-1.ocp.osauer.local.
+_etcd-server-ssl._tcp.ocp.osauer.local	service = 0 10 2380 etcd-0.ocp.osauer.local.
+
  ** CONFIRM **
 #ping T0 and T1 interfaces from your jumpbox   
 #ip assigned from DHCP in the overlay segment (ms_t1_int)  
@@ -190,4 +205,14 @@ govc vm.destroy --dc=PKS-DC.node-1.ocp.osauer.local
 govc vm.destroy --dc=PKS-DC node-2.ocp.osauer.local
  
  
- 
+ **Troubleshooting**
+ ```diff
+
+oc logs -n nsx-system deploy/nsx-ncp > ncp.log
+oc logs -n nsx-system-operator deploy/nsx-ncp-operator > operator.log
+
+### From master (ssh core@master_ip): 
+journalctl > journalctl.txt
+curl -v -k https://192.168.1.70 ### check connectivitiy to NSX-T 
+Nslookup api.ocp.osauer.local
+ ```
