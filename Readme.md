@@ -232,7 +232,7 @@ curl -v -k https://192.168.1.70 ### check connectivitiy to NSX-T
 Nslookup api.ocp.osauer.local
  ```
 
-**Get Started**
+**Scale Workers nodes**
  ```diff
 
 root@sauer-virtual-machine:~/vsphere# oc get machineset -n openshift-machine-api
