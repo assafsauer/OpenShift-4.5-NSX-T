@@ -20,7 +20,7 @@ Some of the benefits of using NSX-T/NCP with OCP:
 * Service Insertion to redirect traffic between Pods to third party security appliance 
 * Visibility and Troubleshooting tools like NSX Traceflow, IPFIX, Port Mirroring, vRNI 
 
-
+```diff
 ##  Installation Notes
 
 
@@ -29,13 +29,15 @@ well know issues:
 * Bootstrap SSL CERT is  valid for 24 hours only
 * use cleanup script to clean NCP objects (cluster destroy wont work)
 * IPI installtion is under construction, stick to UPI..
+* NCP must know the VIF ID of the vNIC. You can see ocp4-segment ports that are automatically created by navigating to Networking > Segments. These ports must have the following tags:
+tag: <cluster_name>, scope: ncp/cluster tag: <node_name>, scope: ncp/node_name
 * When provisioning VMs for the cluster, the ethernet interfaces configured for each VM must use a MAC address from the VMware Organizationally Unique Identifier (OUI) allocation ranges:
 
 00:05:69:00:00:00 to 00:05:69:FF:FF:FF
 00:0c:29:00:00:00 to 00:0c:29:FF:FF:FF
 00:1c:14:00:00:00 to 00:1c:14:FF:FF:FF
 00:50:56:00:00:00 to 00:50:56:FF:FF:FF
-
+```
 
  
 ## quick start
