@@ -231,3 +231,14 @@ Journal  (grep -i error journalctl.log  | sort -u -t :  -k 10,10 )
 curl -v -k https://192.168.1.70 ### check connectivitiy to NSX-T 
 Nslookup api.ocp.osauer.local
  ```
+
+**Get Started**
+ ```diff
+
+root@sauer-virtual-machine:~/vsphere# oc get machineset -n openshift-machine-api
+NAME               DESIRED   CURRENT   READY   AVAILABLE   AGE
+ocp-hs6zw-worker   1         1                             70m
+root@sauer-virtual-machine:~/vsphere# oc scale --replicas=2 machineset  ocp-dx2ww-worker -n openshift-machine-api
+
+oc get csr -o go-template='{{range .items}}{{if not .status}}{{.metadata.name}}{{"\n"}}{{end}}{{end}}' | xargs oc adm certificate approve
+ ```
