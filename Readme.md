@@ -29,11 +29,11 @@ well know issues:
 * Bootstrap SSL CERT is  valid for 24 hours only
 * use cleanup script to clean NCP objects (cluster destroy wont work)
 * IPI installtion is under construction, stick to UPI..
+* there are some bugs related to version compatibility, make sure to use simillar build for the openshift-install recoreos. 
 * NCP must know the VIF ID of the vNIC. check that  from some reason with UPI4.5 , the operator is not tagging the nodes so you need to tag it manualy:
  Networking > Segments > ports  These ports must have the following tags:
 tag: <cluster_name>, scope: ncp/cluster tag: <node_name>, scope: ncp/node_name
 * When provisioning VMs for the cluster, the ethernet interfaces configured for each VM must use a MAC address from the VMware Organizationally Unique Identifier (OUI) allocation ranges:
-
 00:05:69:00:00:00 to 00:05:69:FF:FF:FF
 00:0c:29:00:00:00 to 00:0c:29:FF:FF:FF
 00:1c:14:00:00:00 to 00:1c:14:FF:FF:FF
