@@ -38,6 +38,31 @@ tag: <cluster_name>, scope: ncp/cluster tag: <node_name>, scope: ncp/node_name
 00:0c:29:00:00:00 to 00:0c:29:FF:FF:FF
 00:1c:14:00:00:00 to 00:1c:14:FF:FF:FF
 00:50:56:00:00:00 to 00:50:56:FF:FF:FF
+
+* Static IP: 
+well , in my setup im using DHCP with static dhcp ip bind based on my mac address (govc create the mac)
+if you like to use static IP , you might need to make some changes: 
+1) For static IPs; you need to generate new ignition files based on the ones that the OpenShift installer generated. You can use the filetranspiler tool in order to make this process a little easier. This is an example form the bootstrap node.(https://github.com/ashcrow/filetranspiler)
+2) create network config
+cat < bootstrap/etc/sysconfig/network-scripts/ifcfg-enp1s0
+
+DEVICE=enp1s0
+BOOTPROTO=none
+ONBOOT=yes
+IPADDR=192.168.7.20
+NETMASK=255.255.255.0
+GATEWAY=192.168.7.1
+DNS1=192.168.7.77
+DNS2=8.8.8.8
+DOMAIN=ocp4.example.com
+PREFIX=24
+DEFROUTE=yes
+IPV6INIT=no
+EOF
+
+3) Using filetranspiler, create a new ignition file based on the one created by openshift-install. Continuing with the example of my bootstrap server; it looks like this:  filetranspiler -i bootstrap.ign -f bootstrap -o bootstrap-static.ign
+
+
 ```
 
  
