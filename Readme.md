@@ -216,6 +216,7 @@ the govc will create Master/workers nodes and will insert the proper ingitions v
 **RUN Bootstrap install**
  ```diff
 openshift-install --dir=/root/vsphere/ wait-for bootstrap-complete --log-level=debug
+openshift-install --dir=/root/vsphere/ wait-for install-complete --log-level=DEBUG
 ```
 
 **Cleanup**
