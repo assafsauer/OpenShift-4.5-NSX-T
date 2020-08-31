@@ -267,4 +267,5 @@ ocp-hs6zw-worker   1         1                             70m
 root@sauer-virtual-machine:~/vsphere# oc scale --replicas=2 machineset  ocp-dx2ww-worker -n openshift-machine-api
 
 oc get csr -o go-template='{{range .items}}{{if not .status}}{{.metadata.name}}{{"\n"}}{{end}}{{end}}' | xargs oc adm certificate approve
+for i in `oc get csr | grep -i pending | awk '{print $1}'`; do oc adm certificate approve $i; done
  ```
