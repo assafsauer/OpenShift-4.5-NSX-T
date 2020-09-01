@@ -70,4 +70,6 @@ root@sauer-virtual-machine:/home/sauer/ncp# cat configmap.yaml | grep "=" |grep 
     process_oc_network = False  <br>
     ovs_bridge = br-int  <br>
     ovs_uplink_port = ens192  <br>
+    lb_default_cert_path = /etc/nsx-ujo/certs/nsx/lb_default.crt <br>
+    lb_priv_key_path = /etc/nsx-ujo/certs/nsx/lb_default.key <br>
 root@sauer-virtual-machine:/home/sauer/ncp#   <br>
