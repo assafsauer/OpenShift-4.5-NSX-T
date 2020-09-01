@@ -104,9 +104,9 @@ terraform apply
 ```diff
 +Example of DNS configuration with Dnsmasq below:
 
-WILDCARD   
+WILDCARD  (pointing to the nodes)
 root@ubuntu:/home/viewadmin# cat /etc/dnsmasq.conf | grep 10.4.1.6  
-address=/.apps.ocp.osauer.local/10.4.1.6   
+address=/.apps.ocp.osauer.local/10.4.1.28   
 
 A-RECORD   
 root@ubuntu:/home/viewadmin# cat /etc/hosts | grep 10.4.1.5   
