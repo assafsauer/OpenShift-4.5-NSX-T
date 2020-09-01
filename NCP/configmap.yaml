@@ -203,13 +203,16 @@ data:
     # Path to the default certificate file for HTTPS load balancing. Must be
     # specified along with lb_priv_key_path option
     #lb_default_cert_path = <None>
+    
+    lb_default_cert_path = /etc/nsx-ujo/certs/nsx/lb_default.crt
 
     # Path to the private key file for default certificate for HTTPS load
     # balancing. Must be specified along with lb_default_cert_path option
     #lb_priv_key_path = <None>
-
+    lb_priv_key_path = /etc/nsx-ujo/certs/nsx/lb_default.key
     # Option to set load balancing algorithm in load balancer pool object.
     # Choices: ROUND_ROBIN LEAST_CONNECTION IP_HASH WEIGHTED_ROUND_ROBIN
+    
     pool_algorithm = WEIGHTED_ROUND_ROBIN
 
     # Option to set load balancer service size. MEDIUM Edge VM (4 vCPU, 8GB)
