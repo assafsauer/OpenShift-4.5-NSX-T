@@ -216,6 +216,9 @@ the govc will create Master/workers nodes and will insert the proper ingitions v
 **RUN Bootstrap install**
  ```diff
 openshift-install --dir=/root/vsphere/ wait-for bootstrap-complete --log-level=debug
+
+#### make sure you have runnning nodes (needed for the ingress/console) before you run install-complete
+
 openshift-install --dir=/root/vsphere/ wait-for install-complete --log-level=DEBUG
 ```
 
