@@ -108,7 +108,7 @@ WILDCARD  (pointing to the nodes)
 root@ubuntu:/home/viewadmin# cat /etc/dnsmasq.conf | grep 10.4.1.6  
 address=/.apps.ocp.osauer.local/10.4.1.28   
 
-A-RECORD   
+A-RECORD    (10.4.1.5 is the NSX-T LB we created pointing to the control plabs)
 root@ubuntu:/home/viewadmin# cat /etc/hosts | grep 10.4.1.5   
 10.4.1.5 api.ocp.osauer.local   
 10.4.1.5  api-int.ocp.osauer.local    
@@ -208,7 +208,7 @@ Nginx Setup:  https://github.com/assafsauer/OpenShift-4.5-NSX-T/blob/master/ngin
 **##### automate Cluster nodes on Vsphere with govc #####**
  ```diff
  +automate infra (nodes/workers)
-the govc will create Master/workers nodes and will insert the proper ingitions values to each VM.   
+use the govc to create Master/workers nodes and  insert the proper ingitions values to each VM.   
 1) edit the vars section  <br>
 2) the govc create MAC for each VM and you can define assign static IP based MAC from the OCP segment  
 
