@@ -165,6 +165,8 @@ mv openshift-install /usr/local/bin/
  +edit the NCP vars and run the script  
  https://github.com/assafsauer/OpenShift-4.5-NSX-T/tree/master/NCP
  
+ also make suree the operator.yaml is pointing to a valid NCP image
+ 
 **Installation prep**
   
   #Create installtion folder and copy and NCP yamls to the manifest folder:
